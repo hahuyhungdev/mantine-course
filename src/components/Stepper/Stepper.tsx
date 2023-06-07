@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Stepper, Button, Group } from '@mantine/core';
+import { IconCircleX } from '@tabler/icons-react';
 
 function StepperCustom() {
   const [active, setActive] = useState(1);
@@ -8,11 +9,11 @@ function StepperCustom() {
 
   return (
     <>
-      <Stepper active={active} onStepClick={setActive} breakpoint='sm'>
+      <Stepper active={active} onStepClick={setActive} breakpoint='sm' allowNextStepsSelect={false}>
         <Stepper.Step label='First step' description='Create an account'>
           Step 1 content: Create an account
         </Stepper.Step>
-        <Stepper.Step label='Second step' description='Verify email'>
+        <Stepper.Step label='Second step' description='Verify email' completedIcon={<IconCircleX size='1.1rem' />}>
           Step 2 content: Verify email
         </Stepper.Step>
         <Stepper.Step label='Final step' description='Get full access'>
